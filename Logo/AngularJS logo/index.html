@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+
+    body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+
+    .angular {
+    width: 60vmin;
+    height: 60vmin;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 65vmin;
+    line-height: 75vmin;
+    text-align: center;
+    position: relative;
+    perspective: 200vmin;
+    color: #fff;
+    
+    &::before,
+    &::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+  }
+  &::before {
+    width: 128%;
+    height: 89.5%;
+    background-color: #dd0031;
+    left: 8.5vmin;
+    top: 0;
+    transform: rotateY(-62.5deg) rotateX(-9.3deg) translateZ(40vmin) skewY(2deg) skewX(-18deg);
+
+  }
+  &::after {
+    width: 124%;
+    height: 97.5%;
+    background-color: #c3002f;
+    left: -5.5vmin;
+    top: 0.3vmin;
+    transform: rotateY(60deg) rotateX(-12.8deg) translateZ(20vmin) skewY(-2.2deg) skewX(20deg);
+
+  }
+}    
+
+</style>
+</head>
+<body>
+    <div class="angular">A</div>
+</body>
+</html>

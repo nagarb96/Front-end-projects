@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Review</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        body {
+            font-family: Roboto, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('Background_image.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            filter: blur(8px);
+            z-index: -1;
+        }
+
+        .review-container {
+            position: relative;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 600px;
+            height: auto;
+            max-height: 100%;
+            overflow: hidden;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.8);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            overflow-y: auto; /* Enable scrolling for content */
+        }
+
+        .header {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .header h4 {
+            margin: 0;
+            text-align: center;
+            font-weight: 400;
+            font-size: 16px;
+        }
+
+        .review-rating {
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+        }
+
+        .star {
+            width: 34px;
+            height: 34px;
+            cursor: pointer;
+            transition: transform 0.2s;
+            margin: 0 10px;
+        }
+
+        .star.checked {
+            fill: #FABB05;
+        }
+
+        .textarea-text {
+            font-size: 15px;
+        }
+
+        .review-area {
+            flex-grow: 1;
+            margin-bottom: 25px;
+        }
+
+        textarea {
+            font-family: Roboto, sans-serif;
+            width: 100%;
+            border: 1px solid #000000;
+            border-radius: 8px;
+            padding: 10px;
+            resize: none;
+            box-sizing: border-box;
+            min-height: calc(1.5em * 3 + 20px);
+            line-height: 1.5em;
+        }
+
+        textarea:focus {
+            border-color: #036fe2;
+            border: 2px solid #036fe2;
+            outline: none;
+        }
+
+        .info-fields input:focus {
+            border-color: #036fe2;
+            outline: none;
+        }
+
+        .info-fields {
+            display: none; /* Initially hide */
+            flex-direction: column;
+        }
+
+        .info-fields.show {
+            display: flex; /* Show when conditions are met */
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .info-fields input {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #000000;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .post-button {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-top: auto; /* Push button to the bottom */
+            margin-bottom: 20px;
+        }
+
+        #postBtn {
+            background-color: #036fe2;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            width: 85%;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        #postBtn:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 600px) {
+            .review-container {
+                margin-top: 0; /* Remove any top margin */
+                padding-top: 0; /* Remove any top padding */
+                height: 100vh; /* Make the container full height of the viewport */
+                border-radius: 0; /* Remove border radius for full width */
+                width: 100%;
+                border: none; /* Remove border for full width */
+            }
+
+            .content {
+                padding: 15px;
+                height: calc(100% - 100px); /* Subtract height of post button and some margin */
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between; /* Align items vertically */
+            }
+
+            .post-button {
+                margin: 40px auto 0; /* Auto margin on top, 0 margin on bottom */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="review-container">
+        <div class="content">
+            <div>
+                <div class="header">
+                    <h4>First Class OBGYN: Laviniu Anghel MD</h4>
+                </div>
+                <div class="review-rating" id="rating">
+                    <img class="star" src="Empty-Star.svg" alt="star" />
+                    <img class="star" src="Empty-Star.svg" alt="star" />
+                    <img class="star" src="Empty-Star.svg" alt="star" />
+                    <img class="star" src="Empty-Star.svg" alt="star" />
+                    <img class="star" src="Empty-Star.svg" alt="star" />
+                </div>
+                <div class="review-area">
+                    <p class="textarea-text">Share more about your experience</p>
+                    <textarea id="reviewText" placeholder="Share details of your own experience at this place"></textarea>
+                </div>
+                <div class="info-fields" id="infoFields">
+                    <input type="text" id="nameInput" placeholder="Your Name" required>
+                    <input type="email" id="emailInput" placeholder="Your Email" required>
+                </div>
+            </div>
+            <div class="post-button">
+                <button id="postBtn">Post</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const stars = document.querySelectorAll('.star');
+            const infoFields = document.getElementById('infoFields');
+            const postBtn = document.getElementById('postBtn');
+            const reviewText = document.getElementById('reviewText');
+            const nameInput = document.getElementById('nameInput');
+            const emailInput = document.getElementById('emailInput');
+            let rating = 0;
+
+            stars.forEach((star, index) => {
+                star.addEventListener('click', () => {
+                    rating = index + 1;
+                    stars.forEach((s, i) => {
+                        if (i < rating) {
+                            s.src = 'Filled-Star.svg';
+                        } else {
+                            s.src = 'Empty-Star.svg';
+                        }
+                    });
+                    infoFields.classList.add('show');
+                });
+            });
+
+            postBtn.addEventListener('click', () => {
+                if (rating === 0) {
+                    alert('Please select a star rating.');
+                } else if (reviewText.value.trim() === '') {
+                    alert('Please enter your review.');
+                } else if (nameInput.value.trim() === '' || emailInput.value.trim() === '') {
+                    alert('Please fill in your name and email.');
+                } else if (!validateEmail(emailInput.value)) {
+                    alert('Please enter a valid email address.');
+                } else {
+                    // Redirect to thank-you page
+                    window.location.href = 'thank-you.html';
+                }
+            });
+
+            function validateEmail(email) {
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailPattern.test(email);
+            }
+        });
+    </script>
+</body>
+
+</html>

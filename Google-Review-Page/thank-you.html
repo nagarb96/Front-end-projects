@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        body {
+            font-family: Roboto, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #4285f4;
+            overflow: hidden; /* Prevent body scroll */
+        }
+
+        .modal-content {
+            background-color: #4285f4;
+            color: white;
+            padding: 20px;
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            position: relative;
+        }
+
+        .modal-header {
+            font-size: 24px;
+            font-weight: 200;
+            margin-bottom: 10px;
+        }
+
+        .modal-body {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .modal-footer {
+            display: flex;
+            justify-content: center;
+        }
+
+        #closeModalBtn {
+            background-color: #fff;
+            color: #0056b3;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        #closeModalBtn:hover {
+            background-color: #f1f1f1;
+            transition: cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .header-img {
+            width: 100px;
+            height: auto;
+            display: block;
+            margin: 0 auto 10px auto;
+        }
+
+        @media (max-width: 600px) {
+            .modal-content {
+                padding-top: 150px;
+                box-shadow: none;
+                height: calc(100vh - 150px); /* Adjust height to avoid overflow */
+                overflow: hidden; /* Ensure no overflow */
+            }
+        }
+    </style>
+    <script>
+        function closeTab() {
+            window.open('', '_self').close();
+        }
+
+        // Set timeout to close the tab after 5 seconds
+        setTimeout(closeTab, 5000);
+    </script>
+</head>
+
+<body>
+    <div class="modal-content">
+        <img src="correct.svg" alt="Correct Image" class="header-img">
+        <div class="modal-header">
+            <p>Review posted, thank you!</p>
+        </div>
+        <div class="modal-body">
+            <p>Your contribution helps others make more informed decisions about the places that they visit.</p>
+        </div>
+        <div class="modal-footer">
+            <button id="closeModalBtn">Done</button>
+        </div>
+    </div>
+</body>
+
+</html>

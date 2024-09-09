@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinite Autoplay Slider</title>
+    <style>
+       body {
+            margin: 0;
+            display: grid;
+        }
+
+        .container {
+            height: 350px;
+            margin: auto;
+            position: relative;
+            width: 100%;
+            display: grid;
+            place-items: center;
+            overflow: hidden;
+        }
+
+        .slide-container {
+            display: flex;
+            width: calc(250px * 18);
+            animation: scroll 50s linear infinite;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0%);
+            }
+
+            100% {
+                transform: translateX(calc(-250px * 9));
+            }
+        }
+
+        .slide-image {
+            height: 250px;
+            width: 250px;
+            display: flex;
+            align-items: center;
+            perspective: 100px;
+            margin-left: 15px;
+            border-radius: 30px;
+            position: relative;
+        }
+
+        .slide-image img {
+            height: 250px;
+            width: 250px;
+            border-radius: 30px;
+        }
+
+        .slide-text {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            color: white;
+            padding: 10px;
+            text-align: left;
+            transition: 0.3s opacity;
+            opacity: 0;
+            border-radius: 0 0 30px 30px;
+            cursor: pointer;
+        }
+        .slide-text li {
+            text-decoration: none;
+            display: inline;
+            margin-left: 10px;
+            padding: 5px;
+            border: 1px solid #fff;
+            border-radius: 20px;
+        }
+
+        .slide-image .slide-text  {
+            opacity: 1;
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .container:hover .slide-container {
+            animation-play-state: paused;
+        }
+
+        .container:not(:hover) .slide-container {
+            animation-play-state: running;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="slide-container">
+            <div class="slide-image"  onmouseover="pauseAnimation(this)" onmouseout="resumeAnimation(this)">
+                <a href="https://google.com"><img src="1.jpg" alt="Image 1">
+                <div class="slide-text"><p>Brijesh Nagar</p><li>Brand</li><li>illustration</li><li>web</li></div></a>
+            </div>
+            <div class="slide-image"  onmouseover="pauseAnimation(this)" onmouseout="resumeAnimation(this)">
+                <a href="https://google.com"><img src="2.jpg" alt="Image 2">
+                <div class="slide-text"><p>Brijesh Nagar</p><li>Brand</li><li>illustration</li><li>web</li></div></a>
+
+            </div>
+            <div class="slide-image"  onmouseover="pauseAnimation(this)" onmouseout="resumeAnimation(this)">
+                <a href="https://google.com"><img src="3.jpg" alt="Image 3">
+                <div class="slide-text"><p>Brijesh Nagar</p><li>Brand</li><li>illustration</li><li>web</li></div></a>
+
+            </div>
+            <div class="slide-image"  onmouseover="pauseAnimation(this)" onmouseout="resumeAnimation(this)">
+                <a href="https://google.com"><img src="4.jpg" alt="Image 4">
+                <div class="slide-text"><p>Brijesh Nagar</p><li>Brand</li><li>illustration</li><li>web</li></div></a>
+
+            </div>
+            <div class="slide-image"  onmouseover="pauseAnimation(this)" onmouseout="resumeAnimation(this)">
+                <a href="https://google.com"><img src="5.jpg" alt="Image 5">
+                <div class="slide-text"><p>Brijesh Nagar</p><li>Brand</li><li>illustration</li><li>web</li></div></a>
+
+            </div>
+            <div class="slide-image"  onmouseover="pauseAnimation(this)" onmouseout="resumeAnimation(this)">
+                <a href="https://google.com"><img src="1.jpg" alt="Image 1">
+                <div class="slide-text"><p>Brijesh Nagar</p><li>Brand</li><li>illustration</li><li>web</li></div></a>
+
+            </div>
+            <div class="slide-image"  onmouseover="pauseAnimation(this)" onmouseout="resumeAnimation(this)">
+                <a href="https://google.com"><img src="2.jpg" alt="Image 2">
+                <div class="slide-text"><p>Brijesh Nagar</p><li>Brand</li><li>illustration</li><li>web</li></div></a>
+
+            </div>
+            <div class="slide-image"  onmouseover="pauseAnimation(this)" onmouseout="resumeAnimation(this)">
+                <a href="https://google.com"><img src="3.jpg" alt="Image 3">
+                <div class="slide-text"><p>Brijesh Nagar</p><li>Brand</li><li>illustration</li><li>web</li></div></a>
+
+            </div>
+            <div class="slide-image"  onmouseover="pauseAnimation(this)" onmouseout="resumeAnimation(this)">
+                <a href="https://google.com"><img src="4.jpg" alt="Image 4">
+                <div class="slide-text"><p>Brijesh Nagar</p><li>Brand</li><li>illustration</li><li>web</li></div></a>
+
+            </div>
+            <div class="slide-image"  onmouseover="pauseAnimation(this)" onmouseout="resumeAnimation(this)">
+                <a href="https://google.com"><img src="5.jpg" alt="Image 5">
+                <div class="slide-text"><p>Brijesh Nagar</p><li>Brand</li><li>illustration</li><li>web</li></div></a>
+
+            </div>
+            <div class="slide-image"  onmouseover="pauseAnimation(this)" onmouseout="resumeAnimation(this)">
+                <a href="https://google.com"><img src="1.jpg" alt="Image 1">
+                <div class="slide-text"><p>Brijesh Nagar</p><li>Brand</li><li>illustration</li><li>web</li></div></a>
+
+            </div>
+            <div class="slide-image"  onmouseover="pauseAnimation(this)" onmouseout="resumeAnimation(this)">
+                <a href="https://google.com"><img src="2.jpg" alt="Image 2">
+                <div class="slide-text"><p>Brijesh Nagar</p><li>Brand</li><li>illustration</li><li>web</li></div></a>
+
+            </div>
+            <div class="slide-image"  onmouseover="pauseAnimation(this)" onmouseout="resumeAnimation(this)">
+                <a href="https://google.com"><img src="3.jpg" alt="Image 3">
+                <div class="slide-text"><p>Brijesh Nagar</p><li>Brand</li><li>illustration</li><li>web</li></div></a>
+
+            </div>
+            <div class="slide-image"  onmouseover="pauseAnimation(this)" onmouseout="resumeAnimation(this)">
+                <a href="https://google.com"><img src="4.jpg" alt="Image 4">
+                <div class="slide-text"><p>Brijesh Nagar</p><li>Brand</li><li>illustration</li><li>web</li></div></a>
+
+            </div>
+            <div class="slide-image"  onmouseover="pauseAnimation(this)" onmouseout="resumeAnimation(this)">
+                <a href="https://google.com"><img src="5.jpg" alt="Image 5">
+                <div class="slide-text"><p>Brijesh Nagar</p><li>Brand</li><li>illustration</li><li>web</li></div></a>
+
+            </div>
+
+        </div>
+    </div>
+    <script>
+        function pauseAnimation(element) {
+            element.style.animationPlayState = "paused";
+        }
+
+        function resumeAnimation(element) {
+            element.style.animationPlayState = "running";
+        }
+    </script>
+</body>
+
+</html>

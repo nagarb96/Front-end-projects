@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foam Page</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        form {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="foamForm">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required>
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required>
+
+        <label for="fatherName">Father Name:</label>
+        <input type="text" id="fatherName" name="fatherName" required>
+
+        <label for="married">Married:</label>
+        <select id="married" name="married" onchange="toggleNameInputs()">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+
+        <div id="wifeNameDiv" style="display:none;">
+            <label for="wifeName">Wife Name:</label>
+            <input type="text" id="wifeName" name="wifeName">
+
+            <label for="child">How many children do you have:</label>
+            <input type="text" id="child" name="child">
+
+            <label for="wifeFatherName">Wife Father Name:</label>
+            <input type="text" id="wifeFatherName" name="wifeFatherName">
+        </div>
+
+        <div id="motherNameDiv" style="display:none;">
+            <label for="motherName">Mother Name:</label>
+            <input type="text" id="motherName" name="motherName">
+        </div>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        function toggleNameInputs() {
+            var marriedValue = document.getElementById("married").value;
+            if (marriedValue === "yes") {
+                document.getElementById("wifeNameDiv").style.display = "block";
+                document.getElementById("motherNameDiv").style.display = "none";
+            } else {
+                document.getElementById("wifeNameDiv").style.display = "none";
+                document.getElementById("motherNameDiv").style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>

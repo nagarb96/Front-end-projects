@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+    <style>
+        /* CSS for fixed background image */
+        body {
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #fafafa;
+        }
+        /* CSS for navbar */
+        .navbar {
+            background-color: rgba(255, 0, 0);
+            padding: 20px;
+            width: 100%;
+            z-index: 1000;
+        }
+        .navbar a {
+            color: #160c0c;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        /* CSS for center heading */
+        .center-heading {
+            text-align: center;
+            margin-top: 100px;
+            color: #e44e4e;
+        }
+        /* CSS for social media icons */
+        .social-icons {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .social-icons a {
+            color: #f71010;
+            margin: 0 10px;
+            font-size: 24px;
+        }
+        /* CSS for left image right content and right image left content sections */
+        .image-content-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px;
+            background-color: rgba(67, 74, 138);
+            margin-top: 50px;
+        }
+        .image-content-section img {
+            max-width: 40%;
+            border-radius: 10px;
+        }
+        /* CSS for services section */
+        .services {
+            text-align: center;
+            padding: 50px;
+            background-color: rgba(102, 131, 57);
+            margin-top: 50px;
+        }
+        /* CSS for map */
+        .map {
+            text-align: center;
+            margin-top: 50px;
+        }
+        /* CSS for footer */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(49, 2, 2);
+            margin-top: 50px;
+        }
+        .bheem{
+            transform: scaleX(-1);
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+</div>
+
+<h1 class="center-heading">Your Heading Here</h1>
+
+<div class="social-icons">
+    <a href="#"><i class="fa fa-facebook"></i></a>
+    <a href="#"><i class="fa fa-twitter"></i></a>
+    <a href="#"><i class="fa fa-instagram"></i></a>
+    <!-- Add more social media icons here -->
+</div>
+
+<div class="image-content-section">
+    <img src="bheem.png" alt="Left Image">
+    <div>
+        <h2>Content Title</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+</div>
+
+<div class="image-content-section">
+    <div>
+        <h2>Content Title</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+    <img src="bheem.png" alt="Right Image" class="bheem">
+</div>
+
+<div class="services">
+    <h2>Our Services</h2>
+    <p>List of services here...</p>
+</div>
+
+<div class="map">
+    <!-- Map Embed Code Here -->
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.817853650503!2d-0.14054178422999238!3d51.5126699180918!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48760544728fb9af%3A0xd3e83ec4b4566979!2sBuckingham%20Palace!5e0!3m2!1sen!2suk!4v1646057491006!5m2!1sen!2suk" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</div>
+
+<div class="footer">
+    <p>&copy; 2024 Your Company Name. All rights reserved.</p>
+</div>
+
+</body>
+</html>
