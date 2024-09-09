@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page</title>
+    <style>
+        .addnewcontaint {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-width: 100vh;
+        }
+
+        .headofcontainer {
+            margin: 0 auto; /* Center content */
+            padding: 50px 0;
+            max-width: 1900px;
+            background-color: #007f01;
+            color: #fff;
+        }
+
+        .headofcontainer > h1 {
+            text-align: center;
+        }
+
+        .PreschoolImage {
+            width: auto;
+            max-width: 100%;
+        }
+
+       
+
+        .containers {
+            padding: 50px 8%;
+        }
+
+        .firstContainer, .secondContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .leftSide, .rightSide {
+            padding: 2%;
+            width: 50%;
+        }
+
+        .leftSide, h1, p {
+            text-align: left;
+        }
+
+        .rightSide {
+            text-align: center;
+        }
+         /* Media query for 800px or less devices */
+    @media (max-width: 800px) {
+        .containers {
+            padding: 50px 5%;
+        }
+
+        .leftSide, .rightSide {
+            width: 100%;
+        }
+    }
+    
+    </style>
+</head>
+<body>
+    <div class="addnewcontaint">
+        <div class="headofcontainer">
+
+        <h1>Welocome to Preschools</h1>
+
+            <div class="containers">
+                <div class="firstContainer">
+                    <div class="rightSide">
+                        <img class="PreschoolImage" src="comp-logo.png" alt="">
+                    </div>
+                    <div class="leftSide">
+                        <h1>Little Mountain Preschool</h1>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod at non pariatur vel assumenda sed iste asperiores maxime, impedit quasi minus necessitatibus vitae in commodi suscipit animi officiis veniam sit voluptatum quae, rem ad modi mollitia consequuntur. Eos quaerat vero asperiores animi. Soluta hic alias ut illum laboriosam vitae vel.</p>
+                    </div>
+                </div>
+                <div class="secondContainer">
+                    <div class="leftSide">
+                        <h1>Ready Set Grow</h1>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod at non pariatur vel assumenda sed iste asperiores maxime, impedit quasi minus necessitatibus vitae in commodi suscipit animi officiis veniam sit voluptatum quae, rem ad modi mollitia consequuntur. Eos quaerat vero asperiores animi. Soluta hic alias ut illum laboriosam vitae vel.</p>
+                    </div>
+                    <div class="rightSide">
+                        <img class="PreschoolImage" src="bottom-logo.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
