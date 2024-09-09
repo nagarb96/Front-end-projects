@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Review Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .modal {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 95%;
+            max-width: 400px;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+        .modal header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .modal header .back-button {
+            font-size: 20px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .modal header h2 {
+            flex-grow: 1;
+            font-size: 18px;
+            margin: 0;
+        }
+        .user-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .user-info img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .user-info div {
+            text-align: left;
+        }
+        .user-info div span {
+            display: block;
+        }
+        .user-info div span:last-child {
+            color: gray;
+            font-size: small;
+        }
+        .stars {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .stars span {
+            font-size: 30px;
+            cursor: pointer;
+            color: #ccc;
+        }
+        .stars .selected {
+            color: #f4b400;
+        }
+        .review-text {
+            width: 100%;
+            height: 80px;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: none;
+        }
+        .add-photos {
+            background-color: #f1f1f1;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            padding: 5px 10px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .add-photos svg {
+            margin-right: 5px;
+        }
+        .post-button {
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            width: 100%;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="modal">
+    <header>
+        <span class="back-button">←</span>
+        <h2>First Class OBGYN: Laviniu Anghel MD</h2>
+    </header>
+    
+    <div class="stars" id="star-rating">
+        <span data-value="1">★</span>
+        <span data-value="2">★</span>
+        <span data-value="3">★</span>
+        <span data-value="4">★</span>
+        <span data-value="5">★</span>
+    </div>
+    <textarea class="review-text" placeholder="Share details of your own experience at this place"></textarea>
+    <div class="add-photos">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M4.5 0a.5.5 0 0 1 .5.5V2h6V.5a.5.5 0 0 1 1 0V2h1a1 1 0 0 1 1 1v1H2V3a1 1 0 0 1 1-1h1V.5a.5.5 0 0 1 .5-.5zm9.5 4H2v7a1 1 0 0 0 1 1h1v-1.5a.5.5 0 0 1 1 0V12h6v-1.5a.5.5 0 0 1 1 0V12h1a1 1 0 0 0 1-1V4z"/>
+            <path d="M2.5 9a.5.5 0 0 1 .5.5V11h10V9.5a.5.5 0 0 1 1 0V11a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9.5a.5.5 0 0 1 .5-.5z"/>
+        </svg>
+        Add photos
+    </div>
+    <button class="post-button">Post</button>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const stars = document.querySelectorAll('#star-rating span');
+        let selectedRating = 0;
+
+        stars.forEach(star => {
+            star.addEventListener('click', function() {
+                selectedRating = this.getAttribute('data-value');
+                updateStars(selectedRating);
+            });
+        });
+
+        function updateStars(rating) {
+            stars.forEach(star => {
+                if (star.getAttribute('data-value') <= rating) {
+                    star.classList.add('selected');
+                } else {
+                    star.classList.remove('selected');
+                }
+            });
+        }
+
+        const postButton = document.querySelector('.post-button');
+        postButton.addEventListener('click', function() {
+            alert(`Rating: ${selectedRating}\nReview: ${document.querySelector('.review-text').value}`);
+        });
+    });
+</script>
+
+</body>
+</html>
+

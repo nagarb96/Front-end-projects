@@ -1,0 +1,28 @@
+.profile-picture {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.cart img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.carousel-item img {
+  height: auto;
+  max-width: 100%;
+}
+.footer-container {
+  padding: 20px;
+}
+
+.footer-container .row {
+  margin-bottom: 20px;
+}
+
+.footer-container .col {
+  text-align: center;
+}

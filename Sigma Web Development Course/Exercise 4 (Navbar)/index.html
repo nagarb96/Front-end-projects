@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        :root {
+            --navbgcolor : rgb(255, 204, 204);
+            --tabscolor : rgb(0, 0, 0);
+            --tabshoverbgcolor : rgb(130, 117, 248);
+            --tabshovercolor : rgb(255, 255, 255);
+
+        }
+        body {
+            background-color: gray;
+        }
+        .navbar {
+            background-color: var(--navbgcolor);
+            width: 100%;
+            height: 50px;
+            display: flex;
+        }
+        .logo{
+            padding: 5px;
+        }
+        .logo img {
+            width: auto;
+            height: 40px;
+        }
+        .tabs {
+            list-style-type: none;
+            display: flex;
+
+        }
+        .tabs li {
+            padding: 15px;
+            color: var(--tabscolor);
+        }
+        .tabs li:hover {
+            background-color: var(--tabshoverbgcolor);
+            color: var(--tabshovercolor);
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="https://img.freepik.com/free-vector/bird-colorful-logo-gradient-vector_343694-1365.jpg?size=338&ext=jpg&ga=GA1.1.1546980028.1703757600&semt=sph" alt="">
+        </div>
+        <div class="tabs">
+            <li>Home</li>
+            <li>About</li>
+            <li>Portfolio</li>
+            <li>Services</li>
+            <li>Contact</li>
+        </div>
+    </div>
+</body>
+</html>

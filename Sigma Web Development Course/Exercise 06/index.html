@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nav with usinf flex</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            background-color: antiquewhite;
+            padding: 10px;
+        }
+        .logo{
+            width: 80px;
+            height: 23px;
+        }
+        .logo img {
+            width: 80px;
+        }
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .right ul{
+            display: flex;
+            gap: 34px;
+        }
+        .right ul li {
+            list-style: none;
+            gap: 10px;
+        }
+        .right ul li img {
+            width:22px;
+        }
+        @media screen and (max-width: 800px) {
+            .center {
+                display: none;
+            }
+            nav {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+        }
+        .logo {
+            margin: 15px 0;
+        }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="https://www.ultraedit.com/wp-content/uploads/2023/01/UE-Logo-1.webp" alt="">
+            </div>
+            
+            <div class="right">
+                <ul>
+                    <li>Products</li>
+                    <li>Pricing</li>
+                    <li>Resource</li>
+                    <li>About Us</li>
+                    <li><img src="language.png" alt=""></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+</body>
+</html>

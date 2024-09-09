@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        :root {
+            --navbgcolor : rgb(248, 230, 168);
+            --maincontainer : gray;
+            --primarybgcolor : white;
+            --primarycolor : black;
+            --fixedbutton : yellow;
+            --primaryfont : 20px
+        }
+        header {
+            background-color: var(--navbgcolor);
+            width: 100%;
+            height: 50px;
+            position: fixed;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+        }
+        nav li {
+            list-style-type: none;
+            padding: 13px;
+            font-size: var(--primaryfont);
+        }
+        .main{
+            background-color: var(--maincontainer);
+            width: 100%;
+            height: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .leftcontainer{
+            width: 50vh;
+            height: 300px;
+            background-color: var(--navbgcolor);
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .rightcontainer{
+            width: 50vh;
+            height: 300px;
+            background-color: var(--navbgcolor);
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .main2 {
+            text-align: center;
+            padding: 200px;
+            padding-bottom: 650px;
+        }
+        .pagelogo {
+            bottom: 50px;
+            right: 50px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            background-color: var(--fixedbutton);
+            text-align: center;
+            position: absolute;
+            position: fixed;
+            align-items: end;
+        }
+        .pagelogo p {
+            padding-top: 15px;
+        }
+        footer {
+            background-color: var(--navbgcolor);
+            width: 100%;
+            height: 150px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        footer h2{
+            color: var(--primarycolor);
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div>
+
+    <header>
+        <nav>
+            <li>Home</li>
+            <li>Service</li>
+            <li>About</li>
+            <li>Contact Us</li>                
+        </nav>
+    </header>
+    <div class="pagelogo">
+        <p>Hi</p>
+    </div>
+    <div class="main">
+        <div class="leftcontainer">
+            <p>Left</p>
+        </div>
+        <div class="rightcontainer">
+            <p>Right</p>
+        </div>
+
+    </div>
+    <div class="main2">
+        <h1>
+            Welcome to Sigma web devlopment course
+        </h1>
+    </div>
+    
+    <footer>
+        <h2>@coprright | Layout </h2>
+
+    </footer>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+header {
+    background-color: #f0f0f0;
+    padding: 10px 20px;
+    display: flex; /* Makes elements horizontally aligned */
+    justify-content: space-between; /* Distributes space between elements */
+  }
+  
+  nav {
+    display: flex;
+    align-items: center; /* Aligns elements vertically */
+  }
+  
+  .logo {
+    flex: 0 0 auto; /* Makes logo fixed width and allows content to shrink around it */
+  }
+  
+  .nav-tabs {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex: 1; /* Makes tabs take up remaining space */
+    text-align: center; /* Centers tabs horizontally */
+  }
+  
+  .nav-tabs li {
+    display: inline-block;
+    margin: 0 10px; /* Adds space between tabs */
+  }
+  
+  .nav-tabs a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .cart {
+    flex: 0 0 auto; /* Makes cart icon fixed width */
+  }
+  

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Tab Container</title>
+    <style>
+        @font-face {
+        font-family: Graphik Bold;
+        src: url(Graphik-Font-Family/GraphikBold.otf);
+        }
+        body{
+            margin: 0; /* Remove body margin */
+            font-family: 'Graphik Bold';
+
+        }
+        p {
+            font-family: Poppins;
+            font-size: 18px;
+        }
+        /* Container */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            margin-top: 10px;
+        }
+
+        /* Tabs */
+        .tabs {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Tab Buttons */
+        .tab-button {
+            font-family: 'Graphik Bold';
+            padding: 18px 80px 18px 20px;
+            cursor: pointer;
+            border: 1px solid #2575FC;
+            background-color: #fff;
+            border-radius: 30px;
+            margin-bottom: 5px;
+            text-align: left;
+            font-size: 15px;
+            font-weight: bold;
+            color: black;
+            width: 320px;
+            margin: 0 auto; /* Center the button horizontally */
+            margin-bottom: 10px;
+        }
+        .tab-button:hover {
+            border-radius: 30px;
+            background-color: #2575FC;
+            color: #fff;
+        }
+
+        /* Active Tab Button */
+        .active-button {
+            padding: 18px 80px 18px 20px;
+            border-radius: 30px;
+            background-color: #2575FC;
+            color: #fff;
+            width: 320px;
+            
+
+        }
+        .tab-content {
+            flex-direction: column;
+            width: 320px — 480px; /* Set the content width */
+        }
+
+        /* Show content with the 'active' class */
+        .active {
+            display: flex;
+            background-color: #2575FC;
+            color: #fff;
+        }
+        
+        /* Content Container */
+        .content-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Left Column */
+        .left-column {
+            flex: 1;
+            padding: 20px;
+            text-align: center; /* Center the content */
+        }
+
+        /* Right Column (Image) */
+        .right-column {
+            flex: 0 0 auto;
+            max-width: 400px;
+            margin-left: 20px;
+            text-align: center; /* Center the content */
+        }
+
+        /* Image in Tab Content */
+        .tab-image {
+            max-width: 100%;
+            height: 250px;
+            display: block;
+            margin: 0 auto; /* Center the image */
+            margin-bottom: 10px;
+        }
+        .container-heading {
+            margin-bottom: 10px;
+        }
+        .collapsible-content {
+            display: none;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="contentContainer">
+    <div class="container">
+        <div class="tabs">
+            <!-- Add your tab buttons here for mobile -->
+            <button class="tab-button" data-type="reviews" onclick="toggleContent('reviews')">Reviews</button>
+            <div class="collapsible-content" id="reviews-content">
+                <!-- Your content for Reviews tab -->
+                <div class="tab-content" id="reviews-content">
+                    <div class="left-column">
+                        <h3>WIN MORE PATIENTS WITH AUTOMATIC REVIEWS</h3>
+                        <p>Sends patients review requests
+                            Follows up with spaced-out reminders
+                            Intercepts poor reviews
+                            Ranks you high on Google, Facebook, Yelp, and all leading sites
+                            Displays reviews on your website</p>
+                    </div>
+                    <div class="right-column">
+                        <img class="tab-image" src="Google.png" alt="Image">
+                    </div>
+                </div>
+            </div>
+
+            <button class="tab-button" data-type="scheduling" onclick="toggleContent('scheduling')">Online Scheduling</button>
+            <div class="collapsible-content" id="scheduling-content">
+                <!-- Your content for Online Scheduling tab -->
+                <div class="tab-content" id="scheduling-content">
+                    <div class="left-column">
+                        <h3>CAPTURE NEW LEADS & BOOK MORE PATIENTS WITH ONLINE SCHEDULING</h3>
+                        <p>Capture leads 24/7 with an online scheduling tool that makes it quick and easy for new patients to book an appointment.
+                            Review Wave stores new patient data directly to your EHR and allows existing patients to book or reschedule follow-up appointments with the Review Wave Scheduling App.</p>
+                    </div>
+                    <div class="right-column">
+                        <img class="tab-image" src="Calander.jpg" alt="Image for Scheduling">
+                    </div>
+                </div>            
+            </div>
+            <button class="tab-button" data-type="campaigns" onclick="toggleContent('campaigns')">Automated Campaigns</button>
+            <div class="collapsible-content" id="campaigns-content">
+                <!-- Your content for Online campaigns tab -->
+                <div class="tab-content" id="campaigns-content">
+                    <div class="left-column">
+                        <h3>AUTOMATED MARKETING CAMPAIGNS THAT ALLOW YOU TO REACH MORE PEOPLE AND IMPROVE YOUR COMMUNICATION WITH PATIENTS</h3>
+                        <p>Sends texts using YOUR Business number
+                            Send Automated Texts
+                            Send Manual Texts
+                            Use Saved Replies
+                            Send Videos via Text!
+                        </p>
+                    </div>
+                    <div class="right-column">
+                        <img class="tab-image" src="campaigns-mobile.png" alt="Image for Campaigns">
+                    </div>
+                </div>
+            </div>
+            <button class="tab-button" data-type="texting" onclick="toggleContent('texting')">2 Way Texting</button>
+            <div class="collapsible-content" id="texting-content">
+                <!-- Your content for Online texting tab -->
+                <div class="tab-content" id="texting-content">
+                    <div class="left-column">
+                        <h3>BUSINESS 2-WAY TEXTING</h3>
+                        <p>Sends texts using YOUR Business number
+                            Send Automated Texts
+                            Send Manual Texts
+                            Use Saved Replies
+                            Send Videos via Text!
+                        </p>
+                    </div>
+                    <div class="right-column">
+                        <img class="tab-image" src="business-texting.png" alt="Image for Texting">
+                    </div>
+                </div>
+            </div>
+            <button class="tab-button" data-type="forms" onclick="toggleContent('forms')">Digital Forms</button>
+            <div class="collapsible-content" id="forms-content">
+                <!-- Your content for Online forms tab -->
+                <div class="tab-content" id="forms-content">
+                    <div class="left-column">
+                        <h3>GIVE PATIENTS ACCESS TO FILL OUT FORMS ONLINE BEFORE THEIR FIRST APPOINTMENT</h3>
+                        <p>Reduces office wait times and front desk workload
+                            Improves the patient experience
+                            Saves trees!
+                        </p>
+                    </div>
+                    <div class="right-column">
+                        <img class="tab-image" src="RW-Custom-Form-1.jpg" alt="Image for Forms">
+                    </div>
+                </div>
+            </div>
+            <button class="tab-button" data-type="chat" onclick="toggleContent('chat')">Web Chat</button>
+            <div class="collapsible-content" id="chat-content">
+                <!-- Your content for Online chat tab -->
+                <div class="tab-content" id="chat-content">
+                    <div class="left-column">
+                        <h3>CREATE A CONVENIENT CHANNEL FOR PATIENTS AND NEW LEADS TO EASILY GET AHOLD OF YOU ON THE GO</h3>
+                        <p>Increases web conversions
+                            Patients can still connect with you while multitasking
+                            Saves time for both the practice and the patient
+                        </p>
+                    </div>
+                    <div class="right-column">
+                        <img class="tab-image" src="website-Chat.jpg" alt="Image for Chat" width="100%" height="auto">
+                    </div>
+                </div>
+            </div>
+            <button class="tab-button" data-type="ai" onclick="toggleContent('ai')">AI</button>
+            <div class="collapsible-content" id="ai-content">
+                <!-- Your content for Online ai tab -->
+                <div class="tab-content" id="ai-content">
+                    <div class="left-column">
+                        <h3>Get after-hours phone support with our artificial intelligence answering service</h3>
+                        <p>Never worry about losing new patients because you missed a call or closed down for the night
+                            Text message follow-ups are triggered to the caller to continue the conversation and keep them connected!
+                        </p>
+                    </div>
+                    <div class="right-column">
+                        <img class="tab-image" src="AI-1.jpg" alt="Image for AI">
+                    </div>
+                </div>
+            </div>
+            <button class="tab-button" data-type="care" onclick="toggleContent('care')">Care Plans</button>
+            <div class="collapsible-content" id="care-content">
+                <!-- Your content for Online care tab -->
+                <div class="tab-content" id="care-content">
+            <div class="left-column">
+                <h3>ENTER THE PATIENT’S CARE PLAN INTO THE REVIEW WAVE APP AND IT’LL WRITE DIRECTLY INTO YOUR EHR!</h3>
+                <p>The Mission Control tab in the Review Wave app will read the data from the Care Plan and alert your team of:
+                    Unconfirmed Appointments
+                    Missed Appointments and Care Plan compliance updates
+                    Patients with missing contact info
+                    Patients coming into the office on or around their birthday
+                    AND MORE!
+                </p>
+            </div>
+            <div class="right-column">
+                <img class="tab-image" src="mission-control-half-1.png" alt="Image for Care Plans">
+            </div>
+        </div>
+            </div>
+
+            <!-- Add more buttons and collapsible content sections for other tabs -->
+        </div>
+
+        <!-- Include the same tab-content divs for mobile as in your original code -->
+
+    </div>
+</div>
+    <!-- Include the same JavaScript code for tab functionality as in your original code -->
+    <script>
+        function toggleContent(contentType) {
+            // Hide all content sections first
+            const allContentSections = document.querySelectorAll('.collapsible-content');
+            allContentSections.forEach((content) => {
+                content.style.display = 'none';
+            });
+            
+            // Remove the 'active' class from all tab buttons
+            const allTabButtons = document.querySelectorAll('.tab-button');
+            allTabButtons.forEach((button) => {
+                button.classList.remove('active');
+            });
+
+            // Show the content associated with the clicked button
+            const content = document.getElementById(`${contentType}-content`);
+            content.style.display = 'block';
+
+            // Add the 'active' class to the clicked button
+            const button = document.querySelector(`[data-type="${contentType}"]`);
+            button.classList.add('active');
+        }
+    </script>
+    
+</body>
+</html>

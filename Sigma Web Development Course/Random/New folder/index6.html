@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Buy Forever - Coming Soon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('https://images.pexels.com/photos/2928381/pexels-photo-2928381.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+        .container {
+            position: relative;
+            z-index: 2;
+            padding: 2em;
+            border-radius: 10px;
+            max-width: 600px;
+        }
+        h1 {
+            margin-bottom: 0.5em;
+            font-size: 3em;
+            font-weight: 600;
+        }
+        p {
+            margin-bottom: 2em;
+            color: #ddd;
+        }
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 1em;
+            margin-bottom: 2em;
+        }
+        .countdown div {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 1em;
+            border-radius: 10px;
+            font-size: 2em;
+            width: 80px;
+        }
+        .countdown div span {
+            display: block;
+            font-size: 0.5em;
+            margin-top: 0.5em;
+        }
+        .subscribe {
+            display: flex;
+            justify-content: center;
+            gap: 0.5em;
+        }
+        .subscribe input[type="email"] {
+            padding: 0.8em;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            max-width: 300px;
+            background: rgba(255, 255, 255, 0.8);
+            color: #333;
+        }
+        .subscribe button {
+            padding: 0.8em 1.5em;
+            font-size: 1em;
+            color: #fff;
+            background: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .subscribe button:hover {
+            background: #0056b3;
+            transform: scale(1.05);
+        }
+        footer {
+            margin-top: 2em;
+            font-size: 0.9em;
+            color: #bbb;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .fade-in {
+            animation: fadeIn 2s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="container fade-in">
+        <h1>Best Buy Forever</h1>
+        <p>Our new website is launching soon! Stay tuned for updates and exclusive offers.</p>
+        
+        <div class="countdown">
+            <div>
+                <span id="days"></span>Days
+            </div>
+            <div>
+                <span id="hours"></span>Hours
+            </div>
+            <div>
+                <span id="minutes"></span>Minutes
+            </div>
+            <div>
+                <span id="seconds"></span>Seconds
+            </div>
+        </div>
+
+        <form class="subscribe">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit">Notify Me</button>
+        </form>
+        <footer>
+            &copy; 2024 Best Buy Forever. All rights reserved.
+        </footer>
+    </div>
+
+    <script>
+        // Set the launch date
+        const launchDate = new Date('2024-07-01T00:00:00').getTime();
+
+        // Update the countdown every second
+        const countdown = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = launchDate - now;
+
+            // Calculate time
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the result
+            document.getElementById('days').innerText = days;
+            document.getElementById('hours').innerText = hours;
+            document.getElementById('minutes').innerText = minutes;
+            document.getElementById('seconds').innerText = seconds;
+
+            // If the countdown is finished
+            if (distance < 0) {
+                clearInterval(countdown);
+                document.querySelector('.countdown').innerHTML = 'We are live!';
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
