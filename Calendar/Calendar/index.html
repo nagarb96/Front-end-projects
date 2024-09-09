@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Social Media Calendar</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+  </style>
+</head>
+<body>
+<h1>February 2022</h1>
+<p>Holidays and Daily Observances in the United States</a>
+<ul>
+	<li><time datetime="2022-02-01">1</time><a onclick="showPopup('popup1')">Dark Chocolate Day</a></li>
+	<li><time datetime="2022-02-02">2</time><a onclick="showPopup('popup2')">Groundhog Day</a></li>
+	<li><time datetime="2022-02-03">3</time>Carrot Cake Day</a></li>
+	<li><time datetime="2022-02-04">4</time>Wear Red Day</a></li>
+	<li><time datetime="2022-02-05">5</time>Weatherperson's Day</a></li>
+	<li><time datetime="2022-02-06">6</time>Chopsticks Day</a></li>
+	<li><time datetime="2022-02-07">7</time>No Post</li>
+	<li><time datetime="2022-02-08">8</time>Kite Flying Day</li>
+	<li><time datetime="2022-02-09">9</time>Pizza Day</li>
+	<li><time datetime="2022-02-10">10</time>Umbrella Day</li>
+	<li><time datetime="2022-02-11">11</time>Inventor's Day</li>
+	<li><time datetime="2022-02-12">12</time>Global Movie Day</li>
+	<li><time datetime="2022-02-13">13</time>Tortellini Day</li>
+	<li><time datetime="2022-02-14">14</time>Valentine's Day</li>
+	<li><time datetime="2022-02-15">15</time>Gumdrop Day</li>
+	<li><time datetime="2022-02-16">16</time>Do a Grouch a Favor Day</li>
+	<li><time datetime="2022-02-17">17</time>Cabbage Day</li>
+	<li><time datetime="2022-02-18">18</time>Battery Day</li>
+	<li class="today"><time datetime="2022-02-19">19</time>Chocolate Mint Day</li>
+	<li><time datetime="2022-02-20">20</time>Love Your Pet Day</li>
+	<li><time datetime="2022-02-21">21</time>President's Day</li>
+	<li><time datetime="2022-02-22">22</time>Cook a Sweet Potato Day</li>
+	<li><time datetime="2022-02-23">23</time>Tile Day</li>
+	<li><time datetime="2022-02-24">24</time>Toast Day</li>
+	<li><time datetime="2022-02-25">25</time>Clam Chowder Day</li>
+	<li><time datetime="2022-02-26">26</time>Pistachio Day</li>
+	<li><time datetime="2022-02-27">27</time>Polar Bear Day</li>
+	<li><time datetime="2022-02-28">28</time>Tooth Fairy Day</li>
+</ul>
+ 
+  <div id="popup1" class="popup-container">
+    <button class="popup-close-button" onclick="closePopup('popup1')"><i class="fas fa-times"></i></button>
+    <br>
+    <div><img src="https://play-lh.googleusercontent.com/Mou9ei_W4QFgL4iGb8H5jkKw6Eje5z33UazaoA0A427mXKVE21ZEmtzv4Vun76RHOyg" width="500px" height="500px"></div>
+    <p id="popupContent1">Popup 1 content</p>
+  </div>
+  
+  <div id="popup2" class="popup-container">
+    <button class="popup-close-button" onclick="closePopup('popup2')"><i class="fas fa-times"></i></button>
+    <br>
+    <div><img src="" width="500px" height="500px"></div>
+    <p id="popupContent2">Popup 2 content</p>
+  </div>
+
+
+  <script>
+    function showPopup(target) {
+      const popup = document.getElementById(target);
+      popup.style.display = 'block';
+    }
+    
+    function closePopup(target) {
+      const popup = document.getElementById(target);
+      popup.style.display = 'none';
+    }
+    </script>
+</body>
+</html>

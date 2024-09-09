@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Full-Screen Calendar</title>
+    
+</head>
+<body>
+    <div class="calendar">
+        <div class="month">
+            <span class="prev">&#10094;</span>
+            <h1>August 2023</h1>
+            <span class="next">&#10095;</span>
+        </div>
+        <div class="weekdays">
+            <div>Sun</div>
+            <div>Mon</div>
+            <div>Tue</div>
+            <div>Wed</div>
+            <div>Thu</div>
+            <div>Fri</div>
+            <div>Sat</div>
+        </div>
+        <div class="days">
+            <!-- Days will be generated using JavaScript -->
+        </div>
+    </div>
+    <div class="popup" id="popup">
+        <span class="close-btn" id="closeBtn">&times;</span>
+        <h2>Data for Date</h2>
+        <p>This is some data related to the selected.</p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
