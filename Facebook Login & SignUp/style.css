@@ -1,0 +1,120 @@
+/* Login page CSS start here.....*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    background: #F0F2F5;
+}
+header .main{
+    display: none;
+    position: absolute;
+    top: 25%;
+    width: 70%;
+    gap: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+header .main .left{
+    flex: 1;
+    justify-content: left;
+}
+header .main .right {
+    flex: 1;
+}
+header .main .left p{
+    font-size: 28px;
+    font-weight: 400;
+    margin-top: -14px;
+    margin-left: 28px;
+    letter-spacing: 0.2px;
+}
+header .main .left img {
+    height: 106px;
+    width: 301px;
+}
+header .main .right form {
+    width: 396px;
+    background: #fff;
+    border-radius: 8px;
+    margin-top: -50px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1) rgba(0, 0, 0, rgba(0, 0, 0, .1));
+    padding: 20px 0 28px;
+}
+.form_body {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 0 12px;
+    gap: 15px;
+}
+form input {
+    flex: 1;
+    border: 1px solid #dddfe2;
+    font-size: 17px;
+    padding: 14px 16px;
+    border-radius: 5px;
+    color: #1d2129;
+    outline-color: #8Ab7ef;
+}
+.login {
+    background-color: #1877f2;
+    font-size: 20px;
+    color: #fff;
+    line-height: 48px;
+    padding: 0 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: bold;
+    letter-spacing: 0.2px;
+    width: 100%;
+}
+.forget {
+    text-align: center;
+    color: #1877f2;
+    font-size: 16px;
+    margin: 5px 0;
+    text-transform: capitalize;
+    cursor: pointer;
+    font-family: sans-serif;
+}
+.forget:hover {
+    text-decoration: underline;
+}
+hr {
+    background: rgba(128, 128, 128, 0.349);
+    height: 0.2px;
+}
+.create {
+    background-color: #42b72a;
+    font-size: 16px;
+    color: #fff;
+    width: 192px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    line-height: 48px;
+    margin: auto;
+    cursor: pointer;
+    padding: 0 16px;
+}
+.foot {
+    margin-top: 28px;
+    margin-left: 35px;
+    font-size: 16px;
+    font-family: sans-serif;
+}
+.foot span{
+    font-weight: bold;
+}
+/* Login page CSS end */
+
+/* Start SignUp page CSS...*/
+
